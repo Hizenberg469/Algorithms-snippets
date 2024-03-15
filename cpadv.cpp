@@ -40,6 +40,8 @@ using namespace std;
 #define loop(i,s,e,weight)      for(auto i = s ; (weight>=0? i <= e : i >= e ) ; i+=weight )
 #define read(n)           ll n; cin>>n
 #define endl           '\n'
+#define ALGO_START      clock_t z = clock()
+#define ALGO_END        cout << "RUN TIME : " << fixed << setprecision(6) << ((double)(clock() - z))/CLOCKS_PER_SEC
 
 //endl -> cout << '\n' << flush;//hence,slower.
 //for interactive problem.
