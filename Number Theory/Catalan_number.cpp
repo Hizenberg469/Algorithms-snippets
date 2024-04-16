@@ -20,6 +20,11 @@ int catalanNumber( int n ){
 	return dp[n];	
 }
 
+/*
+	Formula for Catalan Number
+	(2n-C-n)/(n+1)
+*/
+
 int main(int argc, char* argv[] ){
 
 	cout << catalanNumber(3) << '\n';
