@@ -27,6 +27,6 @@ int catalanNumber( int n ){
 
 int main(int argc, char* argv[] ){
 
-	cout << catalanNumber(3) << '\n';
+	cout << catalanNumber(2) << '\n';
 	return 0;
 }
