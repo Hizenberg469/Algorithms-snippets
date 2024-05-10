@@ -105,6 +105,32 @@ ld sq_root(T x){
 }
 
 
+//When no problem of int overflow...
+int ceil2(int a, int b) {
+    return (a + b - 1) / b;
+}
+
+//When facing the Problem of int overflow....
+int ceil2(int a, int b) {
+    if (a == 0) return 0;
+    return (a - 1)/b + 1;
+}
+
+//Approach 3
+int ceil2(int a, int b) {
+    int c=a/b;
+    if(a % b ! =0) c++;
+    return c;
+}
+
+//Approach 4
+int ceil2(int a, int b){
+    int c = a / b;
+    if (c * b < a) c++;
+    return c;
+}
+
+
 template <typename Arg1>
 void __f (const char* name, Arg1&& arg1) { cout << name << " : " << arg1 << endl; }
 template <typename Arg1, typename... Args>
