@@ -59,24 +59,9 @@ public:
 
 int main(){
 
-	Fenwick_Tree fn;
-
-	vector<int> arr = {3,1,2,0,1,3,5,7,10,44,0};
-
-	fn.init( (int)arr.size(), arr);
+	ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
 
-	fn.print();
-
-	int sum = fn.sum(10) - fn.sum(7);
-
-	cout << sum << '\n';
-
-	fn.update(10,1);
-
-	sum = fn.sum(10) - fn.sum(7);
-
-	cout << sum << '\n';
 
 
 	return 0;
