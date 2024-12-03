@@ -43,6 +43,10 @@ CORRECT_ANSWER_FILE=IOFiles/correct_answer.txt
 
 pass_count=0
 
+normalize() {
+    awk '{$1=$1};1' "$1" | tr -d '\r'
+}
+
 while (( 1 ))
 do
     ./$GENERATOR $(($pass_count+1)) > $TESTCASE_FILE
@@ -51,7 +55,11 @@ do
     if $flag ; then
         ./$BRUTEFORCE < $TESTCASE_FILE > $CORRECT_ANSWER_FILE
 
-        if diff -q -Z $OUTPUT_FILE $CORRECT_ANSWER_FILE >> /dev/null; then
+        # cat $OUTPUT_FILE
+        # cat $CORRECT_ANSWER_FILE
+
+        #Use cat for diff...
+        if ! diff -q <(cat "$OUTPUT_FILE") <(cat "$CORRECT_ANSWER_FILE") > /dev/null; then
             echo -e "\033[0;31mTest #$(($pass_count+1)): FAIL\033[0m"
             echo "Test case:"
             cat $TESTCASE_FILE
