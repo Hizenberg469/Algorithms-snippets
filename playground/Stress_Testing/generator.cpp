@@ -12,20 +12,28 @@ int main(int argc, char* argv[]){
     
     srand(seed);
 
-    int n = rnd(1,20);
+    int n = rnd(1,3);
 
-    int k = rnd(20, 40);
+    int k = rnd(1,6);
 
-    cout << n << ' ' << k << '\n';
+    int l1 = rnd(1,4);
 
-    int val = 0;
-    for(int i = 0 ; i < n ; i++ ){
+    int r1 = rnd(l1,8);
 
-        val = rnd(0,50);
+    int l2 = rnd(l1, 8);
 
-        cout << val << ' ';
+    int r2 = rnd(l2,10);
+
+    if( rand() % 2 == 0 ){
+        swap(l1,l2);
+        swap(r1,r2);
     }
+
+    cout << 1 << '\n';
+    cout << n << ' ' << k << '\n';
+    cout << l1 << ' ' << r1 << '\n';
+    cout << l2 << ' ' << r2 << '\n';
     
-    cout << '\n';
+    // cout << '\n';
 	return 0;
 }

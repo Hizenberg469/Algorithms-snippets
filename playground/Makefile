@@ -5,7 +5,7 @@ SOLUTION_BINARY = $(BUILD_DIR)/solution
 BRUTEFORCE_BINARY = $(BUILD_DIR)/$(notdir Stress_Testing/bruteForce)
 GENERATOR_BINARY = $(BUILD_DIR)/$(notdir Stress_Testing/generator)
 CODEDIRS = . ./Stress_Testing
-INCDIRS = .
+INCDIRS = . ./include
 
 
 CXX = g++

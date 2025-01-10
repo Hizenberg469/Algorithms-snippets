@@ -93,7 +93,7 @@ do
 
     test_output=$(<"$OUTPUT_FILE")
 
-    if diff -q -Z <(echo $test_output) <(echo $expected_output) > /dev/null; then
+    if diff -q -Z <(echo -e $test_output) <(echo -e $expected_output) > /dev/null; then
         echo -e "\033[0;32mTest #$(($test_num+1)): PASS\033[0m"
         
         #Debug mode - in case to see the output.

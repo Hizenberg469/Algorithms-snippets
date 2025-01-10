@@ -22,7 +22,7 @@ while getopts l:nh param; do
         echo "Provide the limit of stress testing"
         echo "$0 'test case limit'"
         echo "$0 -1 (for unlimited)"
-        echo "OPTIONAL: $0 -n (for running with bruteforce)"
+        echo "OPTIONAL: $0 -n (for not running with bruteforce)"
         exit 0
         ;;
     esac
@@ -59,7 +59,8 @@ do
         # cat $CORRECT_ANSWER_FILE
 
         #Use cat for diff...
-        if ! diff -q <(cat "$OUTPUT_FILE") <(cat "$CORRECT_ANSWER_FILE") > /dev/null; then
+        #head -n 1 - for single line comparison
+        if ! diff -Z -q <(cat "$OUTPUT_FILE") <(cat "$CORRECT_ANSWER_FILE") > /dev/null; then
             echo -e "\033[0;31mTest #$(($pass_count+1)): FAIL\033[0m"
             echo "Test case:"
             cat $TESTCASE_FILE
